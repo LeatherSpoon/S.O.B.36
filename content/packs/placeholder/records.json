@@ -1,0 +1,78 @@
+[
+  {
+    "schema_version": 1,
+    "id": "placeholder.first",
+    "pack_id": "placeholder",
+    "type": "MapTile",
+    "status": "verified",
+    "source_ref": "original/phase0",
+    "data": {
+      "spaces": [
+        {
+          "id": "first_0",
+          "tile": "first",
+          "x": 0,
+          "y": 0
+        },
+        {
+          "id": "first_1",
+          "tile": "first",
+          "x": 1,
+          "y": 0
+        }
+      ],
+      "connections": [
+        [
+          "first_0",
+          "first_1"
+        ]
+      ]
+    }
+  },
+  {
+    "schema_version": 1,
+    "id": "placeholder.second",
+    "pack_id": "placeholder",
+    "type": "MapTile",
+    "status": "verified",
+    "source_ref": "original/phase0",
+    "data": {
+      "spaces": [
+        {
+          "id": "second_0",
+          "tile": "second",
+          "x": 2,
+          "y": 0
+        },
+        {
+          "id": "second_1",
+          "tile": "second",
+          "x": 3,
+          "y": 0
+        }
+      ],
+      "connections": [
+        [
+          "first_1",
+          "second_0"
+        ],
+        [
+          "second_0",
+          "second_1"
+        ]
+      ]
+    }
+  },
+  {
+    "schema_version": 1,
+    "id": "placeholder.enemy",
+    "pack_id": "placeholder",
+    "type": "Enemy",
+    "status": "verified",
+    "source_ref": "original/phase0",
+    "data": {
+      "hp": 4,
+      "xp": 5
+    }
+  }
+]
