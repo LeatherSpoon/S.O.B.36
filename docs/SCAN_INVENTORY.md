@@ -100,3 +100,17 @@ manifest = run_inventory(
 ```
 
 The API returns the same envelope it saves. It raises configuration/output errors and `KeyboardInterrupt`; individual source failures are represented in the envelope.
+
+## Editable copy library
+
+The user confirmed `E:\R36_Projects\SOB` contains editable private image
+copies. Keep that folder outside Git; use a separate empty folder for code.
+The OneDrive library remains the read-only original. Inventory itself is always
+read-only, even when pointed at the editable copies:
+
+```powershell
+python -m tools.scan_inventory --source 'E:\R36_Projects\SOB' --output .local/working_copy_manifest.json
+```
+
+Image transformation is a separate future task. Nothing in Phase 0 crops,
+recompresses, renames or overwrites either library.

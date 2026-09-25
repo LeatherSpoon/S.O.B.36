@@ -15,7 +15,8 @@ Personal, offline-first digital adaptation framework for **Shadows of Brimstone*
 ## Development targets
 
 - **Primary development machine:** Windows PC
-- **Expected local checkout:** `E:\R36_Projects\SOB`
+- **Suggested code checkout:** `E:\R36_Projects\SOB-engine` (use an empty folder)
+- **Editable private image copies:** `E:\R36_Projects\SOB`
 - **Private scan/source library:** `C:\Users\Owner\OneDrive\Games\S.O.B`
 - **Primary handheld target:** R36S
 - **Logical resolution:** 640×480
@@ -79,7 +80,10 @@ No edition-specific commercial rules or content are included.
 
 Clone into an **empty directory**. The originally proposed
 `E:\R36_Projects\SOB` was found to contain source scan folders on the handoff
-machine, so do not initialize or overwrite that directory as a checkout.
+machine. The user confirmed that this folder holds editable private image copies;
+keep it separate from the Git checkout. The OneDrive library remains the
+read-only original. Use an empty sibling such as `E:\R36_Projects\SOB-engine`
+for code. Phase 0 performs no image edits.
 
 Run the following from the repository root in PowerShell. Replace the Godot
 executable path with your installation:
