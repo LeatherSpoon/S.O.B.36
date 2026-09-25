@@ -9,8 +9,9 @@ Personal, offline-first digital adaptation framework for **Shadows of Brimstone*
 - Support local pass-and-play human players and computer-controlled players.
 - Keep presentation separate from deterministic game state so save/load, replay, testing, and AI simulation remain reliable.
 - Treat expansions as modular content packs rather than hard-coded forks of the engine.
-- Start with the base game, then grow into Frontier Town, Trederra, and other owned expansions.
+- Start with the base game, then grow into Frontier Town, Trederra, and other expansions.
 
+- 
 ## Development targets
 
 - **Primary development machine:** Windows PC
@@ -22,7 +23,6 @@ Personal, offline-first digital adaptation framework for **Shadows of Brimstone*
 
 ## Source-material policy
 
-This repository is currently **public**. Do not commit copyrighted scans, rulebooks, card faces, enemy sheets, extracted proprietary text, or other commercial game assets.
 
 The user's locally owned scans are the private source of truth and remain outside Git. Tooling should read them from a configurable source path and generate local-only derived content.
 
@@ -51,11 +51,11 @@ Build the architectural spine before attempting full rules coverage:
 1. Boot at 640×480.
 2. Controller and keyboard navigation.
 3. Create/load a campaign.
-4. Persist hero state.
+4. Persist hero(s) state(s).
 5. Discover modular content packs.
 6. Inventory the private scan library without modifying it.
-7. Display one placeholder map tile.
-8. Move a hero between spaces.
+7. Display map tile(s).
+8. Move a hero(s) between spaces.
 9. Spawn a placeholder enemy.
 10. Execute a deterministic turn/combat stub.
 11. Save, quit, reload, and reproduce state exactly.
