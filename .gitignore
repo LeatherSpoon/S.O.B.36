@@ -1,0 +1,45 @@
+# Godot
+.import/
+.godot/
+export.cfg
+export_presets.cfg
+
+# Local/private source material and generated proprietary content
+source_material/
+local_content/
+private_content/
+generated_content/
+.local/
+build/
+dist/
+
+# Local scan manifests if they contain filenames/content-derived metadata
+scan_manifest*.json
+scan_manifest*.csv
+content_manifest.local.*
+*.local.json
+*.local.yaml
+*.local.yml
+
+# Large/raw image sources
+*.tif
+*.tiff
+*.psd
+
+# Python/tooling
+__pycache__/
+*.pyc
+.venv/
+venv/
+
+# IDE / OS
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Logs/temp
+*.log
+tmp/
+temp/
