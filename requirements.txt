@@ -1,0 +1,2 @@
+# Local scan image-header inspection; no OCR or network client is required.
+Pillow==12.3.0

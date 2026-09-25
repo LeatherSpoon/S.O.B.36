@@ -21,13 +21,23 @@ Build a maintainable, offline-first digital adaptation engine for the user's per
 
 ## Local paths
 
-Expected repository checkout:
+Suggested repository checkout (must be an empty directory):
+
+```text
+E:\R36_Projects\SOB-engine
+```
+
+Editable private working copies (not a Git checkout):
 
 ```text
 E:\R36_Projects\SOB
 ```
 
-Private source scans:
+The user authorizes this copy library for future requested image edits. Keep
+these files and derived assets outside Git. Do not edit images merely as part
+of inventory; the inventory command remains read-only for either library.
+
+Private original source scans (read-only):
 
 ```text
 C:\Users\Owner\OneDrive\Games\S.O.B

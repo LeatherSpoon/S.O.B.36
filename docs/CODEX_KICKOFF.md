@@ -13,8 +13,9 @@ The user owns the physical game and multiple expansions and has a large private 
 Local development paths:
 
 ```text
-Repository:   E:\R36_Projects\SOB
-Scan library: C:\Users\Owner\OneDrive\Games\S.O.B
+Code checkout (suggested): E:\R36_Projects\SOB-engine
+Editable private copies:   E:\R36_Projects\SOB
+Original scan library:     C:\Users\Owner\OneDrive\Games\S.O.B
 ```
 
 The repository itself is public. Proprietary source material must remain local-only.

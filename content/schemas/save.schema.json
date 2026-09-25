@@ -1,0 +1,306 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "S.O.B.36 campaign save v1",
+  "type": "object",
+  "required": [
+    "format",
+    "save_version",
+    "state"
+  ],
+  "additionalProperties": false,
+  "properties": {
+    "format": {
+      "const": "sob36.campaign"
+    },
+    "save_version": {
+      "type": "integer",
+      "const": 1
+    },
+    "state": {
+      "type": "object",
+      "required": [
+        "campaign",
+        "rng",
+        "events",
+        "map",
+        "enemy",
+        "phase",
+        "turn",
+        "packs",
+        "initiative"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "campaign": {
+          "type": "object",
+          "required": [
+            "id",
+            "edition",
+            "heroes",
+            "completed_adventures"
+          ],
+          "additionalProperties": false,
+          "properties": {
+            "id": {
+              "type": "string",
+              "minLength": 1
+            },
+            "edition": {
+              "type": "object",
+              "required": [
+                "id",
+                "status"
+              ],
+              "additionalProperties": false,
+              "properties": {
+                "id": {
+                  "type": "string"
+                },
+                "status": {
+                  "enum": [
+                    "unverified",
+                    "provisional",
+                    "verified"
+                  ]
+                }
+              }
+            },
+            "heroes": {
+              "type": "array",
+              "minItems": 1,
+              "maxItems": 1,
+              "items": {
+                "type": "object",
+                "required": [
+                  "id",
+                  "name",
+                  "space_id",
+                  "xp"
+                ],
+                "additionalProperties": false,
+                "properties": {
+                  "id": {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  "name": {
+                    "type": "string"
+                  },
+                  "space_id": {
+                    "type": "string"
+                  },
+                  "xp": {
+                    "type": "integer",
+                    "minimum": 0,
+                    "maximum": 2147483647
+                  }
+                }
+              }
+            },
+            "completed_adventures": {
+              "type": "integer",
+              "minimum": 0,
+              "maximum": 2147483647
+            }
+          }
+        },
+        "rng": {
+          "type": "object",
+          "required": [
+            "algorithm",
+            "state"
+          ],
+          "additionalProperties": false,
+          "properties": {
+            "algorithm": {
+              "const": "park_miller_16807_v1"
+            },
+            "state": {
+              "type": "integer",
+              "minimum": 1,
+              "maximum": 2147483646
+            }
+          }
+        },
+        "events": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": [
+              "sequence",
+              "type",
+              "payload"
+            ],
+            "additionalProperties": false,
+            "properties": {
+              "sequence": {
+                "type": "integer",
+                "minimum": 1
+              },
+              "type": {
+                "type": "string"
+              },
+              "payload": {
+                "type": "object"
+              }
+            }
+          }
+        },
+        "map": {
+          "type": "object",
+          "required": [
+            "spaces",
+            "connections",
+            "revealed_tiles"
+          ],
+          "additionalProperties": false,
+          "properties": {
+            "spaces": {
+              "type": "object",
+              "minProperties": 1,
+              "additionalProperties": {
+                "type": "object",
+                "required": [
+                  "id",
+                  "tile",
+                  "x",
+                  "y"
+                ],
+                "additionalProperties": false,
+                "properties": {
+                  "id": {
+                    "type": "string",
+                    "pattern": "^[a-z0-9._-]+$"
+                  },
+                  "tile": {
+                    "type": "string",
+                    "pattern": "^[a-z0-9._-]+$"
+                  },
+                  "x": {
+                    "type": "integer",
+                    "minimum": 0,
+                    "maximum": 20
+                  },
+                  "y": {
+                    "type": "integer",
+                    "minimum": 0,
+                    "maximum": 20
+                  }
+                }
+              }
+            },
+            "connections": {
+              "type": "array",
+              "items": {
+                "type": "array",
+                "minItems": 2,
+                "maxItems": 2,
+                "items": {
+                  "type": "string",
+                  "pattern": "^[a-z0-9._-]+$"
+                }
+              }
+            },
+            "revealed_tiles": {
+              "type": "array",
+              "minItems": 1,
+              "uniqueItems": true,
+              "items": {
+                "type": "string"
+              }
+            }
+          }
+        },
+        "enemy": {
+          "type": "object",
+          "required": [
+            "id",
+            "record_id",
+            "space_id",
+            "hp",
+            "spawned",
+            "xp_awarded"
+          ],
+          "additionalProperties": false,
+          "properties": {
+            "id": {
+              "type": "string"
+            },
+            "record_id": {
+              "type": "string"
+            },
+            "space_id": {
+              "type": "string"
+            },
+            "hp": {
+              "type": "integer",
+              "minimum": 0,
+              "maximum": 2147483647
+            },
+            "spawned": {
+              "type": "boolean"
+            },
+            "xp_awarded": {
+              "type": "boolean"
+            }
+          }
+        },
+        "phase": {
+          "enum": [
+            "exploration",
+            "combat",
+            "finished"
+          ]
+        },
+        "turn": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 2147483647
+        },
+        "packs": {
+          "type": "object",
+          "minProperties": 1,
+          "additionalProperties": {
+            "type": "string"
+          }
+        },
+        "initiative": {
+          "oneOf": [
+            {
+              "type": "object",
+              "maxProperties": 0
+            },
+            {
+              "type": "object",
+              "required": [
+                "hero",
+                "enemy",
+                "first"
+              ],
+              "additionalProperties": false,
+              "properties": {
+                "hero": {
+                  "type": "integer",
+                  "minimum": 1,
+                  "maximum": 6
+                },
+                "enemy": {
+                  "type": "integer",
+                  "minimum": 1,
+                  "maximum": 6
+                },
+                "first": {
+                  "enum": [
+                    "hero",
+                    "enemy"
+                  ]
+                }
+              }
+            }
+          ]
+        }
+      }
+    }
+  },
+  "$comment": "Runtime additionally enforces connected non-overlapping topology, referential and phase consistency, contiguous event sequence, supported edition and exact installed pack versions, verified fixture references, and signed 32-bit integer-only numbers recursively (including event payloads)."
+}

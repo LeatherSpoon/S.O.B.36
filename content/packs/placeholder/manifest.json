@@ -1,0 +1,11 @@
+{
+  "schema_version": 1,
+  "id": "placeholder",
+  "name": "Original Phase 0 fixtures",
+  "version": "0.1.0",
+  "dependencies": [],
+  "supported_editions": [],
+  "content_files": [
+    "records.json"
+  ]
+}

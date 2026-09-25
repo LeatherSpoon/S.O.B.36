@@ -1,0 +1,22 @@
+; Godot 3.5.x
+config_version=4
+
+[application]
+config/name="S.O.B.36 - Foundation"
+run/main_scene="res://app/presentation/main.tscn"
+config/description="Placeholder-only deterministic architecture demo."
+
+[display]
+window/size/width=640
+window/size/height=480
+window/size/resizable=true
+window/stretch/mode="2d"
+window/stretch/aspect="keep"
+
+[rendering]
+quality/driver/driver_name="GLES2"
+environment/default_clear_color=Color(0.055, 0.07, 0.09, 1)
+
+[logging]
+file_logging/enable_file_logging=false
+file_logging/enable_file_logging.pc=false
