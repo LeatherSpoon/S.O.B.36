@@ -14,7 +14,7 @@ Local development paths:
 
 ```text
 Code checkout (suggested): E:\R36_Projects\SOB-engine
-Editable private copies:   E:\R36_Projects\SOB
+Editable private copies:   E:\R36_Projects\SOB36\SOB
 Original scan library:     C:\Users\Owner\OneDrive\Games\S.O.B
 ```
 

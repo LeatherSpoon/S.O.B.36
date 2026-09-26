@@ -13,7 +13,7 @@ func equal(a, b):
 	return JSON.print(a, "", true) == JSON.print(b, "", true)
 
 func _init():
-	for path in ["res://tests/core_suite.gd", "res://tests/content_suite.gd", "res://tests/input_suite.gd", "res://tests/save_edges_suite.gd", "res://tests/content_edges_suite.gd"]:
+	for path in ["res://tests/core_suite.gd", "res://tests/content_suite.gd", "res://tests/input_suite.gd", "res://tests/save_edges_suite.gd", "res://tests/content_edges_suite.gd", "res://tests/story_motion_suite.gd", "res://tests/art_suite.gd"]:
 		var script = load(path)
 		check(script != null and script.can_instance(), "suite loads: " + path)
 		if script != null and script.can_instance():

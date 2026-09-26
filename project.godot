@@ -4,7 +4,7 @@ config_version=4
 [application]
 config/name="S.O.B.36 - Foundation"
 run/main_scene="res://app/presentation/main.tscn"
-config/description="Placeholder-only deterministic architecture demo."
+config/description="A collection-themed mine adventure with deterministic demo mechanics."
 
 [display]
 window/size/width=640

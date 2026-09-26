@@ -10,6 +10,8 @@ static func install():
 	bind("load_campaign", [KEY_F9], JOY_BUTTON_3)
 	bind("new_campaign", [KEY_N], JOY_START)
 	bind("cancel", [KEY_ESCAPE], JOY_BUTTON_1)
+	bind("collection", [KEY_G, KEY_TAB], JOY_SELECT)
+	bind("reduced_motion", [KEY_M], JOY_L)
 
 static func bind(action, keys, button, axis = -1, value = 0.0):
 	if not InputMap.has_action(action):
