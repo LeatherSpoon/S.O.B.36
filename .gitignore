@@ -43,3 +43,9 @@ desktop.ini
 *.log
 tmp/
 temp/
+
+# Local installed product and private scan folder
+/SOB/
+/saves/
+/SOB36.exe
+/SOB36.pck

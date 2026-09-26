@@ -21,6 +21,7 @@ func run():
 	var scene = packed.instance()
 	get_root().add_child(scene)
 	yield(self, "idle_frame")
+	check(scene.has_method("open_collection"), "collection viewer exists")
 	check(get_root().size == Vector2(640, 480), "logical viewport is 640x480")
 	check(scene.game.campaign.heroes[0].space_id == "first_0", "new campaign created")
 	# Exercise the real input path, not only a domain API.

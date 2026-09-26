@@ -30,7 +30,7 @@ E:\R36_Projects\SOB-engine
 Editable private working copies (not a Git checkout):
 
 ```text
-E:\R36_Projects\SOB
+E:\R36_Projects\SOB36\SOB
 ```
 
 The user authorizes this copy library for future requested image edits. Keep

@@ -16,7 +16,8 @@ Personal, offline-first digital adaptation framework for **Shadows of Brimstone*
 
 - **Primary development machine:** Windows PC
 - **Suggested code checkout:** `E:\R36_Projects\SOB-engine` (use an empty folder)
-- **Editable private image copies:** `E:\R36_Projects\SOB`
+- **Windows product folder:** `E:\R36_Projects\SOB36`
+- **Editable private image copies:** `E:\R36_Projects\SOB36\SOB`
 - **Private scan/source library:** `C:\Users\Owner\OneDrive\Games\S.O.B`
 - **Primary handheld target:** R36S
 - **Logical resolution:** 640×480
@@ -79,7 +80,7 @@ No edition-specific commercial rules or content are included.
 - A keyboard; a mapped gamepad is optional for desktop testing.
 
 Clone into an **empty directory**. The originally proposed
-`E:\R36_Projects\SOB` was found to contain source scan folders on the handoff
+`E:\R36_Projects\SOB36\SOB` was found to contain source scan folders on the handoff
 machine. The user confirmed that this folder holds editable private image copies;
 keep it separate from the Git checkout. The OneDrive library remains the
 read-only original. Use an empty sibling such as `E:\R36_Projects\SOB-engine`
@@ -112,6 +113,8 @@ The override above keeps development saves inside ignored `.local/`.
 | Load | F9 | Y / top face button |
 | New campaign | N | Start |
 | Cancel new-campaign confirmation | Escape | B / right face button |
+| Browse private image collection | G or Tab | Select |
+| Reduced motion | M | Left shoulder |
 
 Move right once to the doorway, confirm to reveal, move right again, and confirm
 to roll initiative. Confirm repeatedly to defeat the enemy. Confirm once more
@@ -178,3 +181,31 @@ All enabled packs and their exact-version dependencies must be present in that
 root. `SOB_EDITION_ID` optionally validates a known edition. The demo itself uses
 the bundled placeholder pack; commercial packs and a pack-selection interface
 belong to subsequent milestones.
+
+### Collection-informed visuals and local Windows build
+
+The mine scene adds original generated environment art, local scan portraits,
+animated movement/reveals/combat/dice, and a folder-based image viewer. Press G
+or Select; arrows change image/folder, A zooms, arrows pan when zoomed, B fits
+then closes. M or left shoulder toggles reduced motion. Some scans contain
+multiple cards on a sheet; PDFs are not displayed. Art remains cosmetic and
+never supplies unverified gameplay rules.
+
+The local Windows installation is `E:\R36_Projects\SOB36\SOB36.exe` with scans
+in its `SOB` subfolder. It saves in `saves/campaign.json`; press F9 to load.
+Keep `.local/visuals.json` private. See [private art setup](docs/PRIVATE_VISUAL_LIBRARY.md)
+and [visual scope](docs/VISUAL_UPGRADE.md).
+
+To build an application pack from public-safe source files:
+
+```powershell
+$env:SOB_PACK_OUTPUT = Join-Path (Get-Location) 'build\SOB36.pck'
+# Python waits for the Windows GUI executable to exit and checks its result.
+python -c 'import os,subprocess; subprocess.run([os.environ["GODOT_BIN"], "--no-window", "--path", ".", "--script", "tools/package/build_pack.gd"], check=True)'
+```
+
+Place the pack beside the official Godot 3.5.3 Standard Windows executable,
+renamed `SOB36.exe`, and include its license notices. The local portable build
+uses this standard engine binary; optimized exports and R36S packaging are
+still future work. The pack allowlists application/core/placeholder content;
+private scans, configurations, manifests and saves are excluded.

@@ -41,6 +41,7 @@ def main() -> int:
     (ROOT / ".local").mkdir(exist_ok=True)
     godot_run(args.godot, "tests/run_tests.gd", "; failures: 0")
     godot_run(args.godot, "tests/scene_smoke.gd", "Scene smoke failures: 0")
+    godot_run(args.godot, "tests/visual_scene.gd", "Visual scene failures: 0")
     godot_run(args.godot, "tests/persistence_process.gd", "Persistence write complete", {"SOB_TEST_MODE": "write"})
     godot_run(args.godot, "tests/persistence_process.gd", "Separate-process persistence proof passed", {"SOB_TEST_MODE": "read"})
     subprocess.run([sys.executable, "-m", "unittest", "discover", "-s", "tests", "-p", "test_*.py", "-v"], cwd=ROOT, check=True)

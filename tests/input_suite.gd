@@ -6,7 +6,7 @@ func run(t):
 	if script == null:
 		return
 	script.install()
-	for action in ["move_left", "move_right", "move_up", "move_down", "confirm", "save_campaign", "load_campaign", "new_campaign"]:
+	for action in ["move_left", "move_right", "move_up", "move_down", "confirm", "save_campaign", "load_campaign", "new_campaign", "collection", "reduced_motion"]:
 		var keyboard = false
 		var controller = false
 		for event in InputMap.get_action_list(action):
